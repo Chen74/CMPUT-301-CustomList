@@ -33,4 +33,6 @@ public class CustomListTest {
         list.addCity(new City("Halifax", "NS"));
         assertFalse(list.hasCity(city));
     }
+
+
 }
