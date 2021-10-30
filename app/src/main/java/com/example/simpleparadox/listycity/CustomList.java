@@ -2,15 +2,13 @@ package com.example.simpleparadox.listycity;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.widget.ArrayAdapter;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -25,6 +23,28 @@ public class CustomList extends ArrayAdapter<City> {
         this.context = context;
     }
 
+    public int getCount() {
+        return cities.size();
+    }
+
+    /**
+     * this function will add a city object into the list
+     * @param city
+     */
+    public void addCity(City city) {
+        cities.add(city);
+        return;
+    }
+
+    /**
+     * this function will add a city object into the list
+     * @param city
+     * @return
+     */
+    public boolean hasCity(City city) {
+        return false;
+    }
+
 
     @NonNull
     @Override
@@ -32,8 +52,8 @@ public class CustomList extends ArrayAdapter<City> {
 //        return super.getView(position, convertView, parent);
         View view = convertView;
 
-        if(view == null){
-            view = LayoutInflater.from(context).inflate(R.layout.content, parent,false);
+        if (view == null) {
+            view = LayoutInflater.from(context).inflate(R.layout.content, parent, false);
         }
 
         City city = cities.get(position);
@@ -47,4 +67,5 @@ public class CustomList extends ArrayAdapter<City> {
         return view;
 
     }
+
 }
