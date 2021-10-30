@@ -36,14 +36,10 @@ public class CustomList extends ArrayAdapter<City> {
         return;
     }
 
-    /**
-     * this function will add a city object into the list
-     * @param city
-     * @return
-     */
     public boolean hasCity(City city) {
-        return true;
+        return cities.contains(city);
     }
+
 
 
     @NonNull
